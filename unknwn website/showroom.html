@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNKN?WN - Showroom</title>
+  <style>
+    body { margin:0; font-family:Arial, sans-serif; background:black; color:white; }
+    nav { display:flex; justify-content:space-between; padding:15px 40px; background:rgba(0,0,0,0.9); position:fixed; width:100%; top:0; }
+    nav a { color:white; text-decoration:none; margin:0 15px; font-weight:bold; }
+    nav a:hover { color:pink; }
+    section { padding:100px 40px; }
+    .gallery { display:flex; gap:20px; flex-wrap:wrap; justify-content:center; }
+    .gallery img { max-width:250px; border-radius:12px; }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">UNKN?WN</div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="showroom.html">Showroom</a>
+      <a href="contacts.html">Contacts</a>
+    </div>
+  </nav>
+
+  <section>
+    <h2 style="text-align:center;">Showroom</h2>
+    <div class="gallery">
+      <img src="showroom2.jpg" alt="Showroom Item" onclick=" zoomImage(event, this)">
+      <img src="showroom1.jpg" alt="Showroom Item" onclick=" zoomImage(event, this)">
+      <img src="showrrom 3.jpg" alt="Showroom Item" onclick=" zoomImage(event, this)">
+      <img src="showrrom4.jpg" alt="Showroom Item" onclick=" zoomImage(event, this)">
+      <img src="showrrom 6.jpg" alt="Showroom Item" onclick=" zoomImage(event, this)">
+      <img src="showrom 5.jpg" alt="Showroom Item" onclick=" zoomImage(event, this)">
+      <img src="showroom8.jpg" alt="Showroom Item" onclick=" zoomImage(event, this)">
+      <img src="showroom 10.jpg" alt="Showroom Item" onclick=" zoomImage(event, this)">
+    </div>
+  </section>
+  <script>
+    function zoomImage(event, img) {
+      event.stopPropagation(); // stop page click from triggering
+      const allImgs = document.querySelectorAll(".gallery img");
+      allImgs.forEach(i => i.classList.remove("zoomed")); // reset all
+      img.classList.add("zoomed"); // zoom the tapped one
+    }
+
+    function resetZoom() {
+      const allImgs = document.querySelectorAll(".gallery img");
+      allImgs.forEach(i => i.classList.remove("zoomed"));
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNKN?WN - Products</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="products.html" class="active">Products</a>
+    <a href="showroom.html">Showroom</a>
+    <a href="contacts.html">Contacts</a>
+  </nav>
+
+  <!-- Ribbon Switch -->
+  <div class="ribbon-switch">
+    <button id="unkn-btn" class="active" onclick="showSection('unkn')">1st of UNKN?WN</button>
+    <button id="diva-btn" onclick="showSection('diva')">UNKN?WN DIVA</button>
+  </div>
+
+  <!-- 1st of UNKN?WN Products -->
+  <!-- 1st of UNKN?WN Products -->
+<section id="unkn-section" class="products-grid">
+  <div class="product-card">
+    <img src="unknown loat man tee 002.jpg" alt="Lost Man Tee 002">
+    <h3>Lost Man Tee 002</h3>
+    <div class="sizes">
+      <button onclick="highlightSize(this)">S</button>
+      <button onclick="highlightSize(this)">M</button>
+      <button onclick="highlightSize(this)">L</button>
+      <button onclick="highlightSize(this)">XL</button>
+      <button onclick="highlightSize(this)">2XL</button>
+    </div>
+    <a href="https://unknown989.bumpa.shop/products/unknown-lost-man-tee-002/3267829?location=240394" target="_blank">
+      <button>Add to Cart</button>
+    </a>
+  </div>
+
+  <div class="product-card">
+    <img src="where's home single.jpg" alt="Where's Home Tee">
+    <h3>Where's Home Tee</h3>
+    <div class="sizes">
+      <button onclick="highlightSize(this)">S</button>
+      <button onclick="highlightSize(this)">M</button>
+      <button onclick="highlightSize(this)">L</button>
+      <button onclick="highlightSize(this)">XL</button>
+      <button onclick="highlightSize(this)">2XL</button>
+    </div>
+    <a href="https://unknown989.bumpa.shop/products/unknown-wheres-home-plain-tee/3267823?location=240394" target="_blank">
+      <button>Add to Cart</button>
+    </a>
+  </div>
+</section>
+
+<script>
+  function highlightSize(button) {
+    // remove highlight from siblings
+    const parent = button.parentElement;
+    [...parent.children].forEach(btn => btn.classList.remove("active-size"));
+    // highlight clicked button
+    button.classList.add("active-size");
+  }
+</script>
+
+
+  <!-- UNKN?WN DIVA Products -->
+  <section id="diva-section" class="diva-products" style="display:none;">
+    <div class="diva-card">
+      <img src="diva 4.png" alt="Diva Collection">
+      <img src="diva 2.jpg" alt="Diva Collection">
+      <img src="diva 5.jpg" alt="Diva Collection">
+      <img src="diva 1.jpg" alt="Diva Collection">
+      <p class="diva-soon">Diva Soon</p>
+    </div>
+  </section>
+
+  <script>
+    function showSection(section) {
+      document.getElementById('unkn-section').style.display = (section === 'unkn') ? 'grid' : 'none';
+      document.getElementById('diva-section').style.display = (section === 'diva') ? 'flex' : 'none';
+
+      document.getElementById('unkn-btn').classList.toggle('active', section === 'unkn');
+      document.getElementById('diva-btn').classList.toggle('active', section === 'diva');
+    }
+  </script>
+</body>
+</html>
